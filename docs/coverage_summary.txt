@@ -1,0 +1,8 @@
+VCS: K-2015.09_Full64
+Language mode: Verilog (.v), no -sverilog
+Regression: PASS, 32/32 injected faults detected, diagnosed and repaired
+Golden signature: 17'h1338d
+Coverage scope: TESTINGHW11TB.uut
+
+Score   Line    Cond    Toggle  FSM     Branch
+100.00  100.00  100.00  100.00 100.00  100.00

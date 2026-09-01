@@ -1,0 +1,31 @@
+# VCS build products
+simv
+simv.daidir/
+csrc/
+*.vdb/
+*.log
+vc_hdrs.h
+DVEfiles/
+urg_report/
+
+# Project-generated runs
+build/
+plain_vcs/
+run_*/
+
+# Editor and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Local credentials and license configuration
+.env
+.env.*
+*.pem
+*.key
+*.ppk
+*.p12
+*.pfx
+*.lic
+license.dat
