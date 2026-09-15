@@ -63,16 +63,12 @@ MISR polynomial 為 `17'h02001`，64 個測試週期後的 golden signature
 |   |-- misr_compactor.v
 |   `-- lbist_controller.v
 |-- tb/
-|   |-- TESTINGHW11TB.v
-|   `-- WAVE_DEMO_TB.v
+|   `-- TESTINGHW11TB.v
 |-- scripts/
-|   |-- run_coverage.sh
-|   `-- run_wave.sh
+|   `-- run_coverage.sh
 |-- docs/
-|   |-- coverage_summary.txt
-|   `-- WAVEFORM_GUIDE.md
+|   `-- coverage_summary.txt
 |-- filelist.f
-|-- filelist_wave.f
 |-- cm_hier.cfg
 `-- README.md
 ```
@@ -107,33 +103,3 @@ bash scripts/run_coverage.sh
 | Branch | 100% |
 | Toggle | 100% |
 | FSM | 100% |
-
-## FSDB Waveform Demo
-
-`WAVE_DEMO_TB.v` 將波形分成四個 `Demo_phase`：
-
-| Demo_phase | Section | Description |
-| ---: | --- | --- |
-| 0 | Normal mode | 外部輸入執行 `16'h1234 + 16'h5678 + 1` |
-| 1 | Healthy BIST | 無故障的 64-cycle LBIST |
-| 2 | Fault detection | FA13 carry stuck-at-1 注入與偵測 |
-| 3 | Repair verification | spare FA 取代 FA13 並重新執行 LBIST |
-
-在 repository 根目錄執行：
-
-```sh
-bash scripts/run_wave.sh
-```
-
-腳本會產生 `bist_wave.fsdb`，使用 Verdi 開啟：
-
-```sh
-verdi -ssf build/wave_<timestamp>/bist_wave.fsdb
-```
-
-建議加入波形的訊號：`Demo_phase`、`Test`、`State`、`Cycle_count`、
-`Signature`、`Signature_diff`、`Fault_detected`、`Faulty_FA`、
-`Fault_type`、`Repair_enable`、`Repair_success`、`PF` 與 `Done`。
-
-實際模擬時間點與 controller state 對照請參考
-[`docs/WAVEFORM_GUIDE.md`](docs/WAVEFORM_GUIDE.md)。

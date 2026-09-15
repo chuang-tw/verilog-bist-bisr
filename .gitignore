@@ -4,9 +4,6 @@ simv.daidir/
 csrc/
 *.vdb/
 *.log
-*.fsdb
-*.vcd
-*.vpd
 vc_hdrs.h
 DVEfiles/
 urg_report/
